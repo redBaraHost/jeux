@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrefour vous offre 50€ dès maintenant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+
+        .top{
+            background: url(./img/top.jpg) center/cover;
+            height: 150px;
+        }
+
+        .head{
+            font-size: 1.6rem;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+        }
+
+        .center{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        P{
+            text-align: center;
+            color: grey;
+        }
+
+        button{
+            min-height: 60px;
+            min-width: 60px;
+            border: none;
+            border-radius: 9999px;
+            background-color: teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        button svg{
+            height: 40px;
+            width: 40px;
+            color: white;
+        }
+
+        @media screen and (min-width: 724px) {
+   
+
+   .center {
+       width: 450px;
+       padding: 0px 30px 0px 30px;
+       margin: auto;
+   }
+   button{
+       margin-left: auto;
+       cursor: pointer;
+   }
+
+   /* Ajoute d'autres styles spécifiques aux écrans PC ici */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="top">
+
+
+    </div>
+
+    <div class="center">
+
+        <br>
+        <img src="./img/logo.jpg" width="80">
+        <br>
+
+        <p class="head">Carrefour vous offre 50€ dès maintenant<p>
+
+            <br> <br>
+
+            <img src="./img/gift-card.png" width="80">
+
+            <br>
+            <br>
+
+            <p>Recevez 50€ si vous répondez à nos critères, sans démarches complexes.</p>
+
+            <br>
+            <br>
+
+            <button type="button" onclick="next()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg></button>
+
+            <br> <br>
+
+    </div>
+    
+</body>
+
+<script>
+    function next(){
+        window.location.href='./infos.html' ;
+    }
+</script>
+
+
+</html>
