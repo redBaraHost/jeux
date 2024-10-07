@@ -39,6 +39,8 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            border: 1px solid rgba(128, 128, 128, 0.461);
+
         }
 
         P {
@@ -89,6 +91,11 @@
 
         @media screen and (min-width: 724px) {
 
+            .top {
+                width: 450px;
+                margin: auto;
+
+            }
 
             .center {
                 width: 450px;
@@ -127,7 +134,8 @@
 
             <input type="text" id="nom" placeholder="Nom et Prenom" required> <br> <br>
             <input type="email" id="email" placeholder="Adresse e-mail" required> <br> <br>
-            <input type="tel" id="tel" placeholder="Numéro de téléphone mobile" maxlength="10" minlength="10" required> <br>
+            <input type="tel" id="tel" placeholder="Numéro de téléphone mobile" maxlength="10" minlength="10" required>
+            <br>
             <br>
             <br>
             <button type="submit">Je participe</button>

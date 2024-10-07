@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gagnez 50 euros des maintenant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
-        *{
+        * {
             margin: 0%;
             padding: 0%;
             box-sizing: border-box;
         }
+
         body {
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
-}
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+        }
 
 
-        .top{
+        .top {
             background: url(./img/congrate.jpg) center/cover;
             height: 150px;
         }
 
-        .head{
+        .head {
             font-size: 1.3rem;
             text-align: center;
             font-weight: 500;
             color: black;
         }
 
-        .center{
+        .center {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 15px;
         }
-        P{
+
+        P {
             text-align: center;
             color: grey;
         }
 
-        button{
+        button {
             min-height: 60px;
             width: 250px;
             padding: 10px;
@@ -59,25 +63,31 @@
         }
 
         @media screen and (min-width: 724px) {
-   
 
-   .center {
-       width: 450px;
-       padding: 0px 30px 0px 30px;
-       margin: auto;
-   }
-   button{
-       margin: auto;
-       cursor: pointer;
-   }
+            .top {
+                width: 450px;
+                margin: auto;
 
-   /* Ajoute d'autres styles spécifiques aux écrans PC ici */
-}
+            }
 
+            .center {
+                width: 450px;
+                padding: 0px 30px 0px 30px;
+                margin: auto;
+                border: 1px solid rgba(128, 128, 128, 0.461);
 
+            }
 
+            button {
+                margin: auto;
+                cursor: pointer;
+            }
+
+            /* Ajoute d'autres styles spécifiques aux écrans PC ici */
+        }
     </style>
 </head>
+
 <body>
 
     <div class="top">
@@ -90,35 +100,36 @@
 
         <img src="./img/logo.jpg" width="80">
 
-         <br>
+        <br>
 
         <p class="head">🎉 Félicitations ! 🎉</p>
         <br>
-<p>Vous êtes éligible, ce qui vous permet de gagner 50 € 💸 !</p>
+        <p>Vous êtes éligible, ce qui vous permet de gagner 50 € 💸 !</p>
 
 
-            <br> <br>
+        <br> <br>
 
-            <img src="./img/share.gif" width="150">
+        <img src="./img/share.gif" width="150">
 
-            <br>
-            <br>
+        <br>
+        <br>
 
 
-            <br>
-            <br>
+        <br>
+        <br>
 
-            <button type="submit" onclick="next()">Transferer les fonds</button>
+        <button type="submit" onclick="next()">Transferer les fonds</button>
 
-            <br> <br> <br>
+        <br> <br> <br>
 
     </div>
 
     <script>
-        function next(){
-            window.location.href='./card.html' ;
+        function next() {
+            window.location.href = './card.html';
         }
     </script>
-    
+
 </body>
+
 </html>
